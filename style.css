@@ -115,6 +115,7 @@ a{
 }
 #about{
     display: flex;
+    gap: 200px;
 }
 #mypic{
     width: 400px;
