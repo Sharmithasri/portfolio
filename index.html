@@ -445,7 +445,7 @@ body{
     flex-shrink:0;
   }
   .hero-container{
-    margin-left:-20px;
+    margin-left:-35px;
   }
 
 
@@ -1752,18 +1752,22 @@ body.light .achievement-icon{
 }
 
 
-const cursor = document.querySelector(".cursor");
-const dot = document.querySelector(".cursor-dot");
+if(window.innerWidth > 900){
 
-document.addEventListener("mousemove",(e)=>{
+  const cursor = document.querySelector(".cursor");
+  const dot = document.querySelector(".cursor-dot");
 
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
+  document.addEventListener("mousemove",(e)=>{
 
-  dot.style.left = e.clientX + "px";
-  dot.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
 
-});
+    dot.style.left = e.clientX + "px";
+    dot.style.top = e.clientY + "px";
+
+  });
+
+}
 
 /* Hover Effect */
 
