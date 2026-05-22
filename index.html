@@ -17,24 +17,10 @@
    UPDATED PREMIUM PORTFOLIO CSS
    SMALLER TYPOGRAPHY + PROFILE IMAGE SUPPORT
 ========================================= */
-    @media (max-width: 768px) {
-
-  .nav-links a{
-    display:none;
-  }
-
-  .theme-toggle{
-    display:flex;
-  }
-
-  nav{
-    padding:14px 20px;
-  }
-
-  .logo{
-    font-size:18px;
-    white-space:nowrap;
-  }
+    html,
+body{
+  overflow-x:hidden;
+  max-width:100%;
 }
 .logo{
     font-family: 'Playfair Display', serif;
@@ -121,14 +107,20 @@ h1,h2,h3{
 
 /* ================= NAVBAR ================= */
 
+/* ================= NAVBAR ================= */
+
 nav{
   width:100%;
-  padding:22px 10%;
+  padding:20px 8%;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   position:fixed;
   top:0;
+  left:0;
+
   z-index:999;
 
   backdrop-filter:blur(18px);
@@ -143,20 +135,27 @@ body.light nav{
 }
 
 .logo{
-  font-size:24px;
+  font-family:'Playfair Display',serif;
+  font-size:22px;
   font-weight:700;
+
+  white-space:nowrap;
+
+  flex-shrink:0;
 }
 
 .nav-links{
   display:flex;
-  gap:25px;
   align-items:center;
+  gap:22px;
 }
 
 .nav-links a{
   color:var(--text);
   text-decoration:none;
+
   font-size:14px;
+
   transition:.3s;
 }
 
@@ -164,21 +163,63 @@ body.light nav{
   color:var(--accent);
 }
 
-.toggle-btn{
-  padding:10px 18px;
-  border:none;
-  border-radius:30px;
-  background:var(--accent);
+.theme-toggle{
+  width:42px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
   cursor:pointer;
-  font-size:13px;
-  font-weight:600;
-  transition:.3s;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(12px);
+
+  color:var(--text);
+
+  transition:.35s;
 }
 
-.toggle-btn:hover{
+body.light .theme-toggle{
+  background:rgba(255,255,255,.7);
+}
+
+.theme-toggle:hover{
   transform:translateY(-3px);
+  color:var(--accent);
 }
 
+/* ================= MOBILE NAV ================= */
+
+@media(max-width:768px){
+
+  nav{
+    padding:14px 16px;
+  }
+
+  .logo{
+    font-size:16px;
+  }
+
+  .nav-links{
+    gap:0;
+  }
+
+  .nav-links a{
+    display:none;
+  }
+
+  .theme-toggle{
+    width:36px;
+    height:36px;
+  }
+}
 /* ================= HERO ================= */
 
 /* ================= HERO ================= */
@@ -826,17 +867,12 @@ footer{
     line-height:1.7;
   }
 
- .nav-links{
-  gap:8px;
-  margin-left:0;
-}
+
 }
 
 @media(max-width:600px){
 
-  .hero h1{
-    font-size:42px;
-  }
+ 
 
   .section-title{
     font-size:34px;
@@ -873,9 +909,7 @@ footer{
   font-size:32px;
 }
 
-.logo{
-  font-size:22px;
-}
+
 /* ================= THEME TOGGLE ICON ================= */
 
 .theme-toggle{
